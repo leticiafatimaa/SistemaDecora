@@ -2,3 +2,7 @@
 
 /*Import required for some components of Angular Material*/
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    background-color: #F5F5F5;
+}
