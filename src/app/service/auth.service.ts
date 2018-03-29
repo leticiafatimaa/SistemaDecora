@@ -21,10 +21,6 @@ export class AuthService {
     return this.user.map(user => Boolean(user));
   }
 
-  getUser() {
-    return this.user;
-  }
-
   public login(email: string, password: string) {
     return new Promise((resolve, reject) => {
       this.afAuth.auth.signInWithEmailAndPassword(email, password).then((user) => {

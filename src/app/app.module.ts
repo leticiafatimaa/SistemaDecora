@@ -6,6 +6,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from './service/auth.service';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { AuthGuard } from './guards';
 
 //Angular Material
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -29,7 +30,7 @@ import { FormRegisterComponent } from './components/form-register/form-register.
 import { RegisterComponent } from './views/register/register.component';
 import { UsersComponent } from './views/users/users.component';
 import { ListUsersComponent } from './components/list-users/list-users.component';
-import { AuthGuard } from './guards';
+
 
 
 
