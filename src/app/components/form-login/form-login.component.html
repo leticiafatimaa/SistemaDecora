@@ -1,19 +1,18 @@
 <mat-card class="Center">
   <mat-card-header>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title><h2>Welcome!</h2></mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <div class="example-container">
-      <mat-form-field>
-        <input matInput placeholder="Email">
-      </mat-form-field>
-      <mat-form-field>
-        <input matInput placeholder="Senha" type="password">
-      </mat-form-field>
+      <form>
+        <mat-form-field>
+          <input matInput #user placeholder="Email">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput #password placeholder="Password" type="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit" style="margin-left: 70%" (click)="logOn(user.value,password.value)">Login</button>
+      </form>
     </div>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-button >Entrar</button>
-    <button mat-button routerLink="/register" >Registrar-se</button>
-  </mat-card-actions>
 </mat-card>

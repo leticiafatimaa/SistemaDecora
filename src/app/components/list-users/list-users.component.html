@@ -1,0 +1,38 @@
+<mat-card style="margin-bottom: 1.5%;">
+  <h2> System &#9729; 
+    <button mat-raised-button color="primary" style="margin-left: 86%" routerLink="/login">Logout</button>
+ </h2>
+</mat-card>
+
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+    <button mat-raised-button [ngClass]="tokenX == 'user' ? 'bg-gray' : 'bg-green'" color="primary" routerLink="/register">Register new User</button>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource">
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.name}} </mat-cell>
+    </ng-container>
+
+    <!-- Email Column -->
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef> Email </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.email}} </mat-cell>
+    </ng-container>
+
+    <!-- User Type Column -->
+    <ng-container matColumnDef="userType">
+      <mat-header-cell *matHeaderCellDef> User Type </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.userType}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
